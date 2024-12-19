@@ -70,8 +70,8 @@
             font-family: 'Teko', Impact, 'Arial Narrow', 'sans-serif';
         }
 
-        .hero-text {
-            font-size: 1.1rem;
+       .hero-text {
+             font-size: 1.1rem;
             max-width: 400px;
             margin-bottom: 4rem;
             color: rgba(0, 0, 0, 0.8);
@@ -129,24 +129,29 @@
             }
         }
 
-        @medi (max-width: 768px) {
+        @media (max-width: 768px) {
             .floating-character {
                 opacity: 0.3;
-                width: 300px;
-                height: 450px;
-            }
-            
-            .download{
-                right: 1%;
-            }
-
-            .hero-text{
-           a     font-size: 0.9rem ;
+                left: -30%;
+                overflow: hidden;
+                width: 700px;
             }
 
             .hero-title{
                 font-size: 2rem;
+                font-weight: bolder;
             }
+
+            .hero-text {
+               margin-bottom: 6rem;
+               font-size: small;
+               
+           }
+
+           .logo{
+            z-index: 21;
+           }
+            
 
             
 
