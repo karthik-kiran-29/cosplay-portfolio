@@ -3,164 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LILCODERMAN - Accept Your Whole Self</title>
+    <title>Dark Theme Landing</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
         }
 
         body {
-            background-color: #DC2626;
+            background-color: #dc2626;
             color: #000;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            overflow-x: hidden;
             min-height: 100vh;
+            margin-left: 5%;
+            margin-right: 5%;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            position: relative;
-            min-height: 100vh;
-        }
-
-        nav {
-            padding: 20px 0;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .main-content {
+        .navbar {
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 40px;
-            gap: 40px;
         }
 
-        .text-content {
-            flex: 0 0 60%;
+        .logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #000;
+            text-decoration: none;
         }
 
-        .heading {
-            font-size: 120px;
-            font-weight: 900;
-            line-height: 0.9;
-            letter-spacing: -2px;
-            margin-bottom: 20px;
-        }
-
-        .biohazard-icon {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background-color: #fff;
-            margin: 0 10px;
-            vertical-align: middle;
-        }
-
-        .description {
-            max-width: 400px;
-            margin-top: 40px;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 20px;
-            margin-top: 40px;
-        }
-
-        .social-icon {
-            width: 24px;
-            height: 24px;
-            background-color: #000;
-        }
-
-        .character-image {
-            flex: 0 0 40%;
-            height: 600px;
-        }
-
-        .download-btn {
-            position: absolute;
-            bottom: 40px;
-            right: 40px;
-            width: 50px;
-            height: 50px;
-            border: 2px solid #000;
-            border-radius: 50%;
-            background: none;
+        .menu-toggle {
+            width: 30px;
+            height: 30px;
             cursor: pointer;
+            border: none;
+            background: none;
+            position: relative;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: #000;
+            margin: 6px 0;
+        }
+
+        .hero {
+            padding: 2rem;
+            min-height: calc(100vh - 70px);
+            position: relative;
             display: flex;
             align-items: center;
-            justify-content: center;
         }
 
-        .download-icon {
-            width: 24px;
-            height: 24px;
+        .hero-content {
+            max-width: 100%;
+            z-index: 1;
+
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 10vw, 12rem);
+            line-height: 1;
+            margin-bottom: 2rem;
+            color: #000;
+            width: 100%;
+            font-weight: 900;
+        }
+
+        .hero-text {
+            font-size: 1.1rem;
+            max-width: 400px;
+            margin-bottom: 2rem;
+            color: rgba(0, 0, 0, 0.8);
+        }
+
+        .floating-character {
+            position: absolute;
+            right: 1%;
+            width: auto;
+            height: auto;
+            bottom: 5%;
+            animation: float 6s ease-in-out infinite;
+            z-index: 9999;
+        }
+
+        .social-links {
+            position: absolute;
+            display: flex;
+            gap: 1rem;
+            bottom: 2rem;
+            left: 2rem;
+        }
+
+        .social-links a {
+            color: #000;
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+
+        .download{
+            padding-right: 5%;
+            position: absolute;
+            bottom: 5%;
+            padding: 15px 20px;
+            margin-right: 5%;
+            border: 1px solid black;
+            border-radius: 40px;
+            align-self: flex-end;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
         }
 
         @media (max-width: 768px) {
-            .main-content {
-                flex-direction: column;
+            .floating-character {
+                opacity: 0.3;
+                width: 300px;
+                height: 450px;
+            }
+            
+            .download{
+                right: 1%;
             }
 
-            .text-content, .character-image {
-                flex: 0 0 100%;
-                width: 100%;
-            }
-
-            .heading {
-                font-size: 80px;
-            }
-
-            .character-image {
-                height: 400px;
-                margin-top: 40px;
-            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <div class="logo">LILCODERMAN</div>
-        </nav>
+    <nav class="navbar">
+        <a href="#" class="logo">Sanji Porfolio</a>
+        <button class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
 
-        <div class="main-content">
-            <div class="text-content">
-                <h1 class="heading">
-                    ACCEPT<br>
-                    YOUR<br>
-                    WHOLE<span class="biohazard-icon"></span><br>
-                    SELF
-                </h1>
-                
-                <p class="description">
-                    Everyone carries a shadow, and acknowledging it is the path to wholeness. Will you embrace the full spectrum of your being?
-                </p>
-
-                <div class="social-icons">
-                    <div class="social-icon"></div>
-                    <div class="social-icon"></div>
-                    <div class="social-icon"></div>
-                </div>
-            </div>
-
-            <div class="character-image"><img src="Assets/anime-character.jpg"alt="anime character"></div>
+    <main class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">ACCEPT YOUR WHOLE SELF</h1>
+            <p class="hero-text">Everyone carries a shadow, and acknowledging it is the path to wholeness. Will you embrace the full spectrum of your being?</p>
         </div>
 
-        <button class="download-btn">
-            <div class="download-icon"><img src="Assets/down-arrow.png" alt="download"></div>
-        </button>
-    </div>
+        <div class="floating-character"><img src="/Assets/anime-character.png" alt="anime-character"></div>
+        <div class="footer-contain">
+            <div class="social-links">
+                <a href="#" ><img src="Assets/instagram-icon.png" alt="instagram-icon"></a>
+                <a href="#" ><img src="Assets/figma-icon.png" alt="figma-icon"></a>
+                <a href="#" ><img src="Assets/github-icon.png" alt="github-icon"></a>
+            </div>
+            <div class="download">
+                <a href="#"><img src="Assets/down-arrow.png" alt="download"></a>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
