@@ -1,158 +1,186 @@
 * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            background-color: #dc2626;
-            color: #000;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            overflow-x: hidden;
-            min-height: 100vh;
-            margin-left: 10%;
-            margin-right: 10%;
-        }
+body {
+    background-color: #dc2626;
+    color: #000;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+}
 
-        .navbar {
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+.navbar {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
 
-        .logo {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #000;
-            text-decoration: none;
-        }
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+}
 
-        .menu-toggle {
-            width: 30px;
-            height: 30px;
-            cursor: pointer;
-            border: none;
-            background: none;
-            position: relative;
-        }
+.menu-toggle {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
 
-        .menu-toggle span {
-            display: block;
-            width: 100%;
-            height: 2px;
-            background: #000;
-            margin: 6px 0;
-        }
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #000;
+    margin: 6px 0;
+}
 
-        .hero {
-            padding: 2rem;
-            min-height: calc(100vh - 70px);
-            position: relative;
-            display: flex;
-            align-items: center;
-        }
+.hero {
+    min-height: 100vh;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
 
-        .hero-content {
-            max-width: 100%;
-            z-index: 1;
+.hero-content {
+    margin-top: -5vh;
+    z-index: 2;
+}
 
-        }
+.hero-title {
+    font-size: clamp(2rem, 8vw, 14rem);
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    color: #000;
+    font-weight: 800;
+    font-family: 'Teko', Impact, 'Arial Narrow', sans-serif;
+    word-wrap: break-word;
+}
 
-        .hero-title {
-            font-size: clamp(2.9rem, 10vw, 14rem);
-            line-height: 1;
-            margin-bottom: 5rem;
-            color: #000;
-            font-weight: 300;
-            width: 100%;
-            margin-left: 5%;
-            font-family: 'Teko', Impact, 'Arial Narrow', 'sans-serif';
-        }
+.hero-text {
+    font-size: 1rem;
+    max-width: 400px;
+    margin-bottom: 2rem;
+    color: rgba(0, 0, 0, 0.8);
+    line-height: 1.5;
+}
 
-       .hero-text {
-             font-size: 1.1rem;
-            max-width: 400px;
-            margin-bottom: 4rem;
-            color: rgba(0, 0, 0, 0.8);
-        }
+.floating-character {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    pointer-events: none;
+}
 
-        .floating-character {
-            position: absolute;
-            right: 25%;
-            bottom: 0;
-            animation: float 6s ease-in-out infinite;
-            z-index: 20;
-        }
+.floating-character img {
+    max-width: 100%;
+    height: auto;
+    opacity: 0.3;
+}
 
-        .social-links {
-            position: absolute;
-            display: flex;
-            gap: 1rem;
-            bottom: 2rem;
-            left: 2rem;
-        }
+.footer-contain {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 0;
+    right: 0;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 3;
+}
 
-        .social-links a {
-            color: #000;
-            text-decoration: none;
-            font-size: 1.5rem;
-        }
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
 
-        .download{
-            padding-right: 5%;
-            position: absolute;
-            bottom: 5%;
-            padding: 15px 20px;
-            right: 5%;
-            border: 2px solid black;
-            border-radius: 40px;
-            align-self: flex-end;
-            z-index: 21;
-        }
+.social-links img {
+    width: 24px;
+    height: 24px;
+}
 
-        .demonic-symbol{
-            height: 0.6em;
-            width: 0.6em;
-        }
+.download {
+    border: 2px solid black;
+    border-radius: 50%;
+    padding: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.download img {
+    width: 20px;
+    height: 20px;
+}
 
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-            100% {
-                transform: translateY(0px);
-            }
-        }
+.demonic-symbol {
+    height: 0.6em;
+    width: 0.6em;
+    vertical-align: middle;
+    margin: 0 0.2em;
+}
 
-        @media (max-width: 768px) {
-            .floating-character {
-                opacity: 0.3;
-                left: -30%;
-                overflow: hidden;
-                width: 700px;
-            }
+@media (min-width: 769px) {
+    .hero {
+        padding: 0 10%;
+    }
 
-            .hero-title{
-                font-size: 2rem;
-                font-weight: bolder;
-            }
+    .navbar {
+        padding: 1.5rem 8rem;
+    }
 
-            .hero-text {
-               margin-bottom: 6rem;
-               font-size: small;
-               
-           }
+    .floating-character {
+        right: 10%;
+        left: auto;
+        opacity: 1;
+    }
 
-           .logo{
-            z-index: 21;
-           }
-            
+    .floating-character img {
+        opacity: 1;
+        max-width: 500px;
+    }
 
-            
+    .footer-contain {
+        padding: 0 10%;
+    }
+}
 
-        }
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+        font-weight: bolder;
+    }
+
+    .hero-title p{
+        display: inline-block;
+    }
+
+    .hero-text {
+        font-size: 0.875rem;
+        margin-bottom: 3rem;
+    }
+
+    .floating-character img {
+        max-width: 80%;
+    }
+}
